@@ -1,0 +1,45 @@
+<app-header ></app-header>
+<div class="container py-5">
+    <div class="row">
+      <div class="col-12 ">
+        <div class="card">
+          <div class="card-body">
+            <h1 class="card-title">{{product.name}}</h1>
+            <p class="card-text">A mobile phone (or cellphone[a]) is a portable telephone that can 
+                make and receive calls over a radio frequency link while the user is moving within a 
+                telephone service area, as opposed to a fixed-location phone (landline phone).
+                The radio frequency link establishes a connection to the switching systems of a 
+                mobile phone operator, which provides access to the public switched telephone network (PSTN).
+                 Modern mobile telephone services use a cellular network architecture and therefore mobile 
+                 telephones are called cellphones (or "cell phones") in North America. In addition to 
+                 telephony, digital mobile phones support a variety of other services, such as text messaging,
+                  multimedia messaging, email, Internet access (via LTE, 5G NR or Wi-Fi), short-range wireless
+                   communications (infrared, Bluetooth), satellite access (navigation, messaging connectivity),
+                    business applications, payments (via NFC), multimedia playback and streaming 
+                    (radio, television), digital photography, and video games. Mobile phones offering only 
+                    basic capabilities are known as feature phones (slang: "dumbphones"); mobile phones which 
+                    offer greatly advanced computing capabilities are referred to as smartphones.</p>
+
+                    <h4><strong>Available offers</strong>  </h4>
+                    <h5>Bank Offer1% up to ₹1000 Off On UPI TransactionsT&C</h5>
+                    <h5>Bank Offer5% Cashback on Flipkart Axis Bank CardT&C</h5>
+                    <h5>Bank Offer₹1000 Off On HDFC Bank Credit and Debit Card TransactionsT&C</h5>
+                    <h5>Special PriceGet extra ₹6000 off (price inclusive of cashback/coupon)T&C</h5>
+                    
+
+            <h3 class="text-primary my-3">Price: {{ product.price | currency:'INR':true:'2.2-2'}}</h3>
+            <div class="row ">
+                <div class="col-2 ">
+                    <button class="btn btn-primary px-5 py-2" *ngIf="product.quantity == 0" [disabled]="true" >Out of Stock</button>
+                    <button class="btn btn-primary px-5 py-2" *ngIf="product.quantity != 0" (click)="Addtocart(product)">Add to Cart</button>
+                </div>
+                <div class="col-6 ">
+                    <button class="btn btn-danger px-5 py-2" (click)="back()">Back</button>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+

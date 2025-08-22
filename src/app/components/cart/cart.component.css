@@ -1,0 +1,34 @@
+.border-style{
+    cursor: pointer;
+}
+
+/* Style for the button */
+.button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background: rgba(92, 92, 92, 0.7);;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+    z-index: 100;
+}
+
+.popup {
+    position: absolute;
+    top: 27%;
+    left: 35%;
+    background: #e7dddd;
+    width: 500px;
+    height: 200px;
+
+    z-index: 200;
+}
+  

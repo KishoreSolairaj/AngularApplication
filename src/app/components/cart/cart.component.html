@@ -1,0 +1,48 @@
+<app-header *ngIf="!PlacedOrderPopup"></app-header>
+<div class="alert-info container px-4 container" *ngIf="!PlacedOrderPopup">
+  <div class="row">
+    <div class="col-md-4 px-5 my-3" >
+      <div *ngFor="let cartProduct of cartProducts" class="px-5 my-3">
+        <div class="card">
+          <div class="card-body" appHighlight>
+            <div class="row">
+              <div class="col-8">
+                <h4 class="card-title">{{cartProduct.name}}</h4>
+                <h5 class="card-text">{{cartProduct.price | currency:'INR':true:'2.2-2'}}</h5>
+              </div>
+              <div class="col-4">
+                <h3>
+                  <span class="border-style" (click)="IncreaseProduct(cartProduct.id,cartProduct.price,cartProduct.quantity,cartProduct.selectedQuantity)">+</span>
+                  <span class="px-3">{{cartProduct.selectedQuantity}}</span>
+                  <span class="border-style" (click)="DecreaseProduct(cartProduct.id,cartProduct.price,cartProduct.selectedQuantity)">-</span>
+                </h3>
+                <a class="text-danger border-style"(click)="RemoveProduct(cartProduct.id,cartProduct.price,cartProduct.selectedQuantity)">Remove</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 offset-md-4 px-5 my-3" *ngIf="cartProducts.length != 0">
+      <h3 class="pb-3">ORDER DETAILS</h3>
+      <h5><strong>Quantity: </strong> {{CartQuantity}}</h5>
+      <h5><strong>Price: </strong> {{CartPrice|currency:'INR'}}</h5>
+      <div class="row">
+        <a (click)="back()" class="btn btn-primary text-center px-5 col-3 me-5">Back</a>
+        <a (click)="OrderPlaced()" class="btn btn-success text-center px-5 col-6">Place Order</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="py-5 my-5 text-center"  *ngIf="cartProducts.length == 0">
+    <h1 class="pt-5 mt-5 ">NO PRODUCT IN CART</h1>
+    <a (click)="back()" class="btn btn-primary text-center px-5">Back</a>
+  </div>
+</div>
+
+<div class="overlay" *ngIf="PlacedOrderPopup"></div>
+  <div class="popup text-center" *ngIf="PlacedOrderPopup">
+    <h1 class="mt-5 pt-5">ORDER PLACED SUCESSFULLY</h1>
+    <button class="btn btn-primary px-5" (click)="OrderSucessfulPop()">OK</button>
+  </div>
+  

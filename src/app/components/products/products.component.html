@@ -1,0 +1,10 @@
+<app-header ></app-header>
+<div class="alert-info container px-4" [style.height.px]="screenHeight-101">
+    <div class="text-end">
+        <a [routerLink]="['/cart']" class="btn btn-primary  px-5 mt-4">View Cart</a>
+    </div>
+    
+    <app-filter (ProductSerach)="OnProductSerach($event)"></app-filter>
+    <app-simplefilter (ProductSelect)="OnProductSelect($event)"></app-simplefilter>
+    <app-product-list [SearchText]="SearchText" [SearchSelect]="SearchSelect"></app-product-list>
+</div>

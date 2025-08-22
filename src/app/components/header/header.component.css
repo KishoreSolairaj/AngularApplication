@@ -1,0 +1,17 @@
+.header img{
+    height: 80px;
+    width: 80px;
+}
+
+.header h1 {
+    padding-top:15px;
+}
+
+.header{
+    padding: 10px 10px;
+    border-bottom: 1px solid;
+}
+
+.header div:last-child {
+    text-align: end;
+}  

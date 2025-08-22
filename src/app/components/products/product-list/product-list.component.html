@@ -1,0 +1,21 @@
+
+<div class="container">
+    <h2>Product List</h2>
+    <div class="row">
+      <ng-container *ngFor="let product of products;">
+        <ng-container *ngIf="SearchText == '' || product.name.toLowerCase().includes(SearchText.toLowerCase())">
+            <div  class="col-md-4 p-5" *ngIf="SearchSelect == ''  || SearchSelect == 'All' || (product.quantity > 0 && SearchSelect == 'Instock') || (product.quantity <= 0 && SearchSelect == 'Outofstock')" >
+              <div class="card" >
+                <div class="card-body" appHighlight >
+                  <h4 class="card-title">{{product.name}}</h4>
+                  <p class="card-text">{{product.category}}.</p>
+                  <a [routerLink]="['/productdescription', product.id]"class="btn btn-primary">View Details</a>
+                  <h5 class="py-2 card-title text-success" *ngIf="product.quantity != 0">In Stock</h5>
+                  <h5 class="py-2 card-title text-danger" *ngIf="product.quantity == 0">Out of Stock</h5>
+                </div>
+              </div>
+            </div>
+        </ng-container>
+      </ng-container>
+    </div>
+  </div>

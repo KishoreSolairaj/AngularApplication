@@ -1,0 +1,27 @@
+<app-header ></app-header>
+<div class="alert-info container loginPopup-container" [style.height.px]="screenHeight-101">
+    <div class="loginPopup">
+        <div class="pb-5">
+            <Span class="pe-5 me-1">UserName:</Span>
+            <input class="ms-5" type="text" [(ngModel)]="UserName">
+        </div>
+        <div class="pb-5">
+            <span class="pe-5 me-3">Password:</span>
+            <input class="ms-5" type="password" [(ngModel)]="Password1">
+        </div>
+        <div class="pb-5">
+            <span class="pe-3">Confirm Password:</span>
+            <input type="password" [(ngModel)]="Password2">
+        </div>
+        <ng-container>
+            <div class="ErrorMessage">
+                <p>{{ErrorMessage}}</p>
+            </div>
+        </ng-container>
+        <div class="Login-button ">
+            <button class="alert-info" (click)="RegisterUser()" >Register</button>
+            <button class="alert-info ms-5 px-5 py-2" (click)="back()">Back</button>
+        </div>
+    </div>
+</div>
+

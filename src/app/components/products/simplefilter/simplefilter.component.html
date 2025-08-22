@@ -1,0 +1,8 @@
+<div>
+    <input type="radio" name="filter" value="All" [(ngModel)]="selectedRadioButton" (change)="search()"  >
+    <Span class="fs-3 pe-4 ps-1">ALL</Span>
+    <input type="radio" name="filter" value="Instock"  [(ngModel)]="selectedRadioButton" (change)="search()">
+    <Span class="fs-3 pe-4 ps-1">IN STOCK</Span>
+    <input type="radio" name="filter" value="Outofstock" [(ngModel)]="selectedRadioButton"  (change)="search()" >
+    <Span class="fs-3 ps-1">OUT OF STOCK</Span>
+</div>
