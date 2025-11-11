@@ -31,6 +31,8 @@ This is a simple **Angular 17** e-commerce-style frontend application built usin
 ---
 
 ## Project Structure
+
+```
 src/
 │
 ├── app/
@@ -55,7 +57,7 @@ src/
 │
 ├── assets/ # Static files
 └── index.html # Main HTML file
-
+```
 
 ---
 
